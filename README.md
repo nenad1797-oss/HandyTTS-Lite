@@ -1,7 +1,8 @@
 # Handy TTS Lite
 
 Tiny companion mod for Nuclear Option: no voice engine, no downloads beyond
-kilobytes. Uses the game's own voice, makes it faster and cleaner.
+kilobytes, unlike Handy TTS. Uses the game's own voice, makes it faster and
+cleaner.
 
 Pick **Handy TTS** instead if you want distinct neural voices per player.
 Only ever run one of them.
@@ -24,9 +25,29 @@ Only ever run one of them.
 
 ## Options (F1 config menu)
 
-General: Enabled, MuteOwn, SpeakServer, Status (live readout), LogLevel.
-Queue: CatchUpSec, CatchUpMax. Fixes: StripRichText, StripIndexPrefix.
-Storage: LogDays (audit log).
+**General**
+- Enabled — master switch. Off = mod fully idle, game speech behaves stock.
+- MuteOwn — don't speak your own messages (off by default).
+- SpeakServer — speak lines sent as `server` (notices, relays; on by
+  default). Turn off if you only want player chat.
+- Status — live driver readout (read-only): idle, catch-up rate + backlog,
+  or OFF warnings.
+- LogLevel — 0 = errors only, 1 = normal, 2 = per-message debug trace.
+  Set to 2 only when collecting a bug report, then back to 1.
+
+**Queue**
+- CatchUpSec — how many seconds of speech backlog before the rate ramps up
+  (2–30, default 3).
+- CatchUpMax — how far the rate may climb while catching up (1–3,
+  default 2). Very long single messages may push to 3 regardless.
+
+**Fixes**
+- StripRichText — remove color/tag markup before speech (on by default).
+- StripIndex — remove `[N]` player-index prefixes before speech (on by
+  default).
+
+**Storage**
+- LogDays — keep the speech audit log this many days (default 7, 0 = off).
 
 ## Bug reports
 
